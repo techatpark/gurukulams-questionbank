@@ -50,11 +50,11 @@ public class AnswerService {
                 case CHOOSE_THE_BEST:
                     Optional<QuestionChoice> rightChoice = question.getChoices()
                             .stream()
-                            .filter(QuestionChoice::getIsAnswer)
+                            .filter(QuestionChoice::isAnswer)
                             .findFirst();
                     if (rightChoice.isPresent()) {
                         isRigntAnswer = rightChoice.get()
-                                .getId()
+                                .id()
                                 .toString()
                                 .equals(answer);
                     }
@@ -62,8 +62,8 @@ public class AnswerService {
                 case MULTI_CHOICE:
                     List<String> rightChoiceIds = question.getChoices()
                             .stream()
-                            .filter(QuestionChoice::getIsAnswer)
-                            .map(choice -> choice.getId().toString())
+                            .filter(QuestionChoice::isAnswer)
+                            .map(choice -> choice.id().toString())
                             .toList();
                     if (!rightChoiceIds.isEmpty()) {
                         Set<String> answerIds = Set.of(answer.split(","));
@@ -82,7 +82,7 @@ public class AnswerService {
                     if (!questionChoices.isEmpty()) {
                         isRigntAnswer = answer.equals(questionChoices.stream()
                                 .map(choice ->
-                                        choice.getId().toString())
+                                        choice.id().toString())
                                 .collect(Collectors.joining(",")));
                     }
                     break;

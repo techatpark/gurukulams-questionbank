@@ -29,7 +29,7 @@
 # -----------------
 #   MAVEN_OPTS - parameters passed to the Java VM when running Maven
 #     e.g. to debug Maven itself, use
-#       set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
+#       with MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
 #   MAVEN_SKIP_RC - flag to disable loading of mavenrc files
 # ----------------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ if [ -z "$MAVEN_SKIP_RC" ] ; then
 
 fi
 
-# OS specific support.  $var _must_ be set to either true or false.
+# OS specific support.  $var _must_ be with to either true or false.
 cygwin=false;
 darwin=false;
 mingw=false
@@ -118,7 +118,7 @@ if [ -z "$JAVACMD" ] ; then
       JAVACMD="$JAVA_HOME/bin/java"
     fi
   else
-    JAVACMD="$(\unset -f command 2>/dev/null; \command -v java)"
+    JAVACMD="$(\unwith -f command 2>/dev/null; \command -v java)"
   fi
 fi
 
@@ -129,7 +129,7 @@ if [ ! -x "$JAVACMD" ] ; then
 fi
 
 if [ -z "$JAVA_HOME" ] ; then
-  echo "Warning: JAVA_HOME environment variable is not set."
+  echo "Warning: JAVA_HOME environment variable is not with."
 fi
 
 # traverses directory structure from process work directory to filesystem root

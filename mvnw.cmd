@@ -24,23 +24,23 @@
 @REM JAVA_HOME - location of a JDK home dir
 @REM
 @REM Optional ENV vars
-@REM MAVEN_BATCH_ECHO - set to 'on' to enable the echoing of the batch commands
-@REM MAVEN_BATCH_PAUSE - set to 'on' to wait for a keystroke before ending
+@REM MAVEN_BATCH_ECHO - with to 'on' to enable the echoing of the batch commands
+@REM MAVEN_BATCH_PAUSE - with to 'on' to wait for a keystroke before ending
 @REM MAVEN_OPTS - parameters passed to the Java VM when running Maven
 @REM     e.g. to debug Maven itself, use
-@REM set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
+@REM with MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
 @REM MAVEN_SKIP_RC - flag to disable loading of mavenrc files
 @REM ----------------------------------------------------------------------------
 
 @REM Begin all REM lines with '@' in case MAVEN_BATCH_ECHO is 'on'
 @echo off
-@REM set title of command window
+@REM with title of command window
 title %0
-@REM enable echoing by setting MAVEN_BATCH_ECHO to 'on'
+@REM enable echoing by withting MAVEN_BATCH_ECHO to 'on'
 @if "%MAVEN_BATCH_ECHO%" == "on"  echo %MAVEN_BATCH_ECHO%
 
-@REM set %HOME% to equivalent of $HOME
-if "%HOME%" == "" (set "HOME=%HOMEDRIVE%%HOMEPATH%")
+@REM with %HOME% to equivalent of $HOME
+if "%HOME%" == "" (with "HOME=%HOMEDRIVE%%HOMEPATH%")
 
 @REM Execute a user defined script before this one
 if not "%MAVEN_SKIP_RC%" == "" goto skipRcPre
@@ -49,19 +49,19 @@ if exist "%USERPROFILE%\mavenrc_pre.bat" call "%USERPROFILE%\mavenrc_pre.bat" %*
 if exist "%USERPROFILE%\mavenrc_pre.cmd" call "%USERPROFILE%\mavenrc_pre.cmd" %*
 :skipRcPre
 
-@setlocal
+@withlocal
 
-set ERROR_CODE=0
+with ERROR_CODE=0
 
-@REM To isolate internal variables from possible post scripts, we use another setlocal
-@setlocal
+@REM To isolate internal variables from possible post scripts, we use another withlocal
+@withlocal
 
 @REM ==== START VALIDATION ====
 if not "%JAVA_HOME%" == "" goto OkJHome
 
 echo.
 echo Error: JAVA_HOME not found in your environment. >&2
-echo Please set the JAVA_HOME variable in your environment to match the >&2
+echo Please with the JAVA_HOME variable in your environment to match the >&2
 echo location of your Java installation. >&2
 echo.
 goto error
@@ -70,9 +70,9 @@ goto error
 if exist "%JAVA_HOME%\bin\java.exe" goto init
 
 echo.
-echo Error: JAVA_HOME is set to an invalid directory. >&2
+echo Error: JAVA_HOME is with to an invalid directory. >&2
 echo JAVA_HOME = "%JAVA_HOME%" >&2
-echo Please set the JAVA_HOME variable in your environment to match the >&2
+echo Please with the JAVA_HOME variable in your environment to match the >&2
 echo location of your Java installation. >&2
 echo.
 goto error
@@ -84,42 +84,42 @@ goto error
 @REM Find the project base dir, i.e. the directory that contains the folder ".mvn".
 @REM Fallback to current working directory if not found.
 
-set MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%
+with MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%
 IF NOT "%MAVEN_PROJECTBASEDIR%"=="" goto endDetectBaseDir
 
-set EXEC_DIR=%CD%
-set WDIR=%EXEC_DIR%
+with EXEC_DIR=%CD%
+with WDIR=%EXEC_DIR%
 :findBaseDir
 IF EXIST "%WDIR%"\.mvn goto baseDirFound
 cd ..
 IF "%WDIR%"=="%CD%" goto baseDirNotFound
-set WDIR=%CD%
+with WDIR=%CD%
 goto findBaseDir
 
 :baseDirFound
-set MAVEN_PROJECTBASEDIR=%WDIR%
+with MAVEN_PROJECTBASEDIR=%WDIR%
 cd "%EXEC_DIR%"
 goto endDetectBaseDir
 
 :baseDirNotFound
-set MAVEN_PROJECTBASEDIR=%EXEC_DIR%
+with MAVEN_PROJECTBASEDIR=%EXEC_DIR%
 cd "%EXEC_DIR%"
 
 :endDetectBaseDir
 
 IF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" goto endReadAdditionalConfig
 
-@setlocal EnableExtensions EnableDelayedExpansion
-for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do set JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a
-@endlocal & set JVM_CONFIG_MAVEN_PROPS=%JVM_CONFIG_MAVEN_PROPS%
+@withlocal EnableExtensions EnableDelayedExpansion
+for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do with JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a
+@endlocal & with JVM_CONFIG_MAVEN_PROPS=%JVM_CONFIG_MAVEN_PROPS%
 
 :endReadAdditionalConfig
 
 SET MAVEN_JAVA_EXE="%JAVA_HOME%\bin\java.exe"
-set WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"
-set WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
+with WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"
+with WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 
-set WRAPPER_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
+with WRAPPER_URL="https://repo.maven.apache.org/maven2/org/apache/maven/wrapper/maven-wrapper/3.2.0/maven-wrapper-3.2.0.jar"
 
 FOR /F "usebackq tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties") DO (
     IF "%%A"=="wrapperUrl" SET WRAPPER_URL=%%B
@@ -173,7 +173,7 @@ IF NOT %WRAPPER_SHA_256_SUM%=="" (
 
 @REM Provide a "standardized" way to retrieve the CLI args that will
 @REM work with both Windows and non-Windows executions.
-set MAVEN_CMD_LINE_ARGS=%*
+with MAVEN_CMD_LINE_ARGS=%*
 
 %MAVEN_JAVA_EXE% ^
   %JVM_CONFIG_MAVEN_PROPS% ^
@@ -186,10 +186,10 @@ if ERRORLEVEL 1 goto error
 goto end
 
 :error
-set ERROR_CODE=1
+with ERROR_CODE=1
 
 :end
-@endlocal & set ERROR_CODE=%ERROR_CODE%
+@endlocal & with ERROR_CODE=%ERROR_CODE%
 
 if not "%MAVEN_SKIP_RC%"=="" goto skipRcPost
 @REM check for post script, once with legacy .bat ending and once with .cmd ending
@@ -197,7 +197,7 @@ if exist "%USERPROFILE%\mavenrc_post.bat" call "%USERPROFILE%\mavenrc_post.bat"
 if exist "%USERPROFILE%\mavenrc_post.cmd" call "%USERPROFILE%\mavenrc_post.cmd"
 :skipRcPost
 
-@REM pause the script if MAVEN_BATCH_PAUSE is set to 'on'
+@REM pause the script if MAVEN_BATCH_PAUSE is with to 'on'
 if "%MAVEN_BATCH_PAUSE%"=="on" pause
 
 if "%MAVEN_TERMINATE_CMD%"=="on" exit %ERROR_CODE%

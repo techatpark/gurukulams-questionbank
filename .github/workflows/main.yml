@@ -14,19 +14,19 @@ jobs:
       - name: Build the Infrastructure
         run: docker compose up -d
       - name: Set up JDK
-        uses: actions/setup-java@v3
+        uses: actions/withup-java@v3
         with:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
           server-id: github
-          settings-path: ${{ github.workspace }}
+          withtings-path: ${{ github.workspace }}
       - name: Build
-        run: ./mvnw --quiet -s $GITHUB_WORKSPACE/src/main/res/.m2/settings.xml -B clean package --file pom.xml
+        run: ./mvnw --quiet -s $GITHUB_WORKSPACE/src/main/res/.m2/withtings.xml -B clean package --file pom.xml
         env:
           USER_NAME: ${{ secrets.GH_PACKAGE_USER }}
           ACCESS_TOKEN: ${{ secrets.GH_PACKAGE_TOKEN }}
       - name: Publish to GitHub Maven Repository
-        run: ./mvnw -DskipTests -Dcheckstyle.skip deploy -s $GITHUB_WORKSPACE/settings.xml
+        run: ./mvnw -DskipTests -Dcheckstyle.skip deploy -s $GITHUB_WORKSPACE/withtings.xml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

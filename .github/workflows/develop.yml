@@ -14,14 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK
-      uses: actions/setup-java@v3
+      uses: actions/withup-java@v3
       with:
         java-version: '21'
         distribution: 'temurin'
     - name: Build the Infrastructure
       run: docker compose up -d
     - name: Quality Check
-      run: ./mvnw --quiet -s $GITHUB_WORKSPACE/src/main/res/.m2/settings.xml -B jacoco:prepare-agent install jacoco:report --file pom.xml
+      run: ./mvnw --quiet -s $GITHUB_WORKSPACE/src/main/res/.m2/withtings.xml -B jacoco:prepare-agent install jacoco:report --file pom.xml
       env:
         USER_NAME: ${{ secrets.GH_PACKAGE_USER }}
         ACCESS_TOKEN: ${{ secrets.GH_PACKAGE_TOKEN }}

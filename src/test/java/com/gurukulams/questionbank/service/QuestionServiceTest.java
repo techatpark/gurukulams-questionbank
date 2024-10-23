@@ -30,7 +30,7 @@ abstract class QuestionServiceTest {
                 .getValidator();
         this.questionService = new QuestionService(
                 validator,
-                TestUtil.questionBankManager());
+                TestUtil.dataManager());
         this.answerService = new AnswerService(this.questionService);
     }
 
@@ -102,12 +102,12 @@ abstract class QuestionServiceTest {
 
     private void testAnswers(Question question) throws SQLException {
         // Right Answer
-        Assertions.assertTrue(answerService.answer(question.getId(),
+        Assertions.assertTrue(answerService.answer(question.id(),
                 getCorrectAnswer(question)));
         // Wrong Answer
 
         for(String answer:getWrongAnswers(question)) {
-            Assertions.assertFalse(answerService.answer(question.getId(),
+            Assertions.assertFalse(answerService.answer(question.id(),
                     answer));
         }
 
@@ -158,9 +158,9 @@ abstract class QuestionServiceTest {
                 crateQuestion);
 
 
-        questionService.delete(question.get().getId(), crateQuestion.getType());
+        questionService.delete(question.get().id(), crateQuestion.getType());
 
-        Assertions.assertTrue(questionService.read(question.get().getId(), null).isEmpty());
+        Assertions.assertTrue(questionService.read(question.get().id(), null).isEmpty());
 
     }
 

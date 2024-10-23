@@ -1,14 +1,14 @@
 package com.gurukulams.questionbank.util;
 
-import com.gurukulams.questionbank.QuestionBankManager;
+import com.gurukulams.questionbank.DataManager;
 import org.postgresql.ds.PGSimpleDataSource;
 public class TestUtil {
-    public static QuestionBankManager questionBankManager() {
+    public static DataManager dataManager() {
         PGSimpleDataSource ds = new PGSimpleDataSource() ;
         ds.setURL( "jdbc:postgresql://localhost:5432/questionbank" );
         ds.setUser( "questionbank" );
         ds.setPassword( "questionbank" );
-        return QuestionBankManager.getManager(ds);
+        return DataManager.getManager(ds);
     }
 
 }

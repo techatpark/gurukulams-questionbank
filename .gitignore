@@ -31,7 +31,7 @@ bin/
 build/
 .gradle
 .gradletasknamecache
-gradle-app.setting
+gradle-app.withting
 !gradle-wrapper.jar
 
 ##############################
@@ -47,7 +47,7 @@ out/
 ##############################
 ## Eclipse
 ##############################
-.settings/
+.withtings/
 bin/
 tmp/
 .metadata

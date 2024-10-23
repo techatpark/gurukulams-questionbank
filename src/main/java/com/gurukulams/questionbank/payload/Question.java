@@ -68,7 +68,7 @@ public class Question {
      *
      * @param matched
      */
-    public final void setMatches(final List<QuestionChoice> matched) {
+    public final void withMatches(final List<QuestionChoice> matched) {
         this.matches = matched;
     }
     /**
@@ -86,11 +86,11 @@ public class Question {
     }
 
     /***
-     * sets the type of question.
+     * withs the type of question.
      *
      * @param aType the type
      */
-    public void setType(final QuestionType aType) {
+    public void withType(final QuestionType aType) {
         this.type = aType;
     }
 
@@ -99,16 +99,16 @@ public class Question {
      *
      * @return id id
      */
-    public UUID getId() {
+    public UUID id() {
         return id;
     }
 
     /**
-     * sets the id of question.
+     * withs the id of question.
      *
      * @param anId the id
      */
-    public void setId(final UUID anId) {
+    public void withId(final UUID anId) {
         this.id = anId;
     }
 
@@ -122,11 +122,11 @@ public class Question {
     }
 
     /**
-     * sets the question.
+     * withs the question.
      *
      * @param anQuestion the question
      */
-    public void setQuestion(final String anQuestion) {
+    public void withQuestion(final String anQuestion) {
         this.question = anQuestion;
     }
 
@@ -144,7 +144,7 @@ public class Question {
      *
      * @param anExplanation
      */
-    public void setExplanation(final String anExplanation) {
+    public void withExplanation(final String anExplanation) {
         this.explanation = anExplanation;
     }
 
@@ -158,11 +158,11 @@ public class Question {
     }
 
     /**
-     * sets the answer.
+     * withs the answer.
      *
      * @param anAnswer the answer
      */
-    public void setAnswer(final String anAnswer) {
+    public void withAnswer(final String anAnswer) {
         this.answer = anAnswer;
     }
 
@@ -180,7 +180,7 @@ public class Question {
      *
      * @param theChoice the question choice
      */
-    public void setChoices(final List<QuestionChoice> theChoice) {
+    public void withChoices(final List<QuestionChoice> theChoice) {
         this.choices = theChoice;
     }
 
@@ -198,12 +198,12 @@ public class Question {
      *
      * @param theOwner the created_by
      */
-    public void setCreatedBy(final String theOwner) {
+    public void withCreatedBy(final String theOwner) {
         this.createdBy = theOwner;
     }
 
     /**
-     * sets created at.
+     * withs created at.
      *
      * @return createdAt
      */
@@ -216,7 +216,7 @@ public class Question {
      *
      * @param aCreatedAt the created at
      */
-    public void setCreatedAt(final LocalDateTime aCreatedAt) {
+    public void withCreatedAt(final LocalDateTime aCreatedAt) {
         this.createdAt = aCreatedAt;
     }
 
@@ -234,7 +234,7 @@ public class Question {
      *
      * @param aupdatedAt
      */
-    public void setUpdatedAt(final LocalDateTime aupdatedAt) {
+    public void withUpdatedAt(final LocalDateTime aupdatedAt) {
         this.updatedAt = aupdatedAt;
     }
 }
